@@ -1,0 +1,26 @@
+body{
+    min-width: 300px;
+}
+
+button {
+    border: 2px solid rgb(16, 23, 124);
+    border-radius: 2px;
+    padding: 10px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 120px;
+}
+
+.mb-2 {
+    margin-bottom:20px;
+}
+
+.mbSpacer {
+    margin-bottom:10px;
+    font-size: 14px;
+}
+
+.hidden {
+    display:none;
+}

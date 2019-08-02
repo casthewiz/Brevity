@@ -1,0 +1,26 @@
+{
+  "description":"An extension that highlights verbosity",
+  "version":"0.0.1",
+  "name": "Brevity",
+  "options_page": "options.html",
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "img/icon-34.png"
+  },
+  "icons": {
+    "128": "img/icon-128.png"
+  },
+  "permissions": ["tabs", "<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
