@@ -11,7 +11,7 @@ const hideContent = () => {
 
 const gradeToCopy = (grade) => {
     if (grade < 13){
-        return grade + 'th'
+        return grade + 'th Grade'
     }
     
     if (grade > 12 && grade < 15){
@@ -25,15 +25,17 @@ const gradeToCopy = (grade) => {
 
 const appendList = (title, items) => {
     let node = document.createElement("P");
-    let h4 = document.createElement("H4");
+    let h4 = document.createElement("H1");
     h4.innerText = title;
     node.appendChild(h4)
 
     items.forEach(item => {
             let div = document.createElement("DIV");
+            let hr = document.createElement("HR")
             div.innerText = item
             div.className = 'mbSpacer'
             node.appendChild(div)
+            node.appendChild(hr)
     })
 
     resultsBody.appendChild(node)
@@ -54,7 +56,7 @@ auditButton.addEventListener("click", () => {
                     if (key.split(' ').length > 6){    
                         let gradeKey = gradeToCopy(items[key].grade)
                         if (!Array.isArray(gradeSets[gradeKey])) gradeSets[gradeKey] = [];
-                        gradeSets[gradeKey].push(key)
+                        gradeSets[gradeKey].push(key + '.')
                     }
                 })
                 console.log(gradeSets)
